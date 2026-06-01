@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import Hero1 from "./Components/Hero1.jsx"
-
+import Middle from "./Components/Middle.jsx"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
     <Hero1/>
+    <Middle/>
   </StrictMode>,
 )
