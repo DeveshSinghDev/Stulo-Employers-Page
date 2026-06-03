@@ -14,7 +14,7 @@ function Companies() {
   ];
 
   return (
-    <section className="bg-[#f8fafc] py-8 overflow-hidden">
+    <section className=" py-8 overflow-hidden mt-25 mb-15">
       <div className="relative">
 
         {/* Left Fade */}

@@ -6,6 +6,8 @@ import Hero1 from "./Components/Hero1.jsx"
 import Middle from "./Components/Middle.jsx"
 import Feature from "./Components/FeatureShowcase.jsx"
 import WhyChooseStulo from "./Components/WhyChooseStulo";
+import HiringWorkflow from "./Components/HiringWorkflow.jsx"
+import FAQ from "./Components/FAQ";
 
 
 createRoot(document.getElementById('root')).render(
@@ -15,5 +17,7 @@ createRoot(document.getElementById('root')).render(
     <Middle />
     <Feature />
     <WhyChooseStulo />
+    <HiringWorkflow/>
+    <FAQ />
   </StrictMode>,
 )

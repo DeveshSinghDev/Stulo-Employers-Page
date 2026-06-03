@@ -114,140 +114,166 @@ function EngagementSection() {
   const activeData = data[active];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
-      <h2 className="text-center text-5xl md:text-6xl font-bold text-slate-800">
-        How Engagement Drives Branding & Innovation
-      </h2>
+  <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    
+    {/* Heading */}
+   <h2 className="text-center text-3xl sm:text-4xl md:text-6xl font-bold text-slate-800 leading-tight max-w-4xl mx-auto">
+  How Engagement Drives Branding & Innovation
+</h2>
 
-      <p className="text-center text-gray-600 mt-5 max-w-4xl mx-auto text-lg">
-        High-scale events that turn static branding into brand-as-experience,
-        driving innovation and engagement.
+    <p className="text-center text-gray-600 mt-4 max-w-4xl mx-auto text-sm sm:text-base md:text-lg px-2">
+      High-scale events that turn static branding into brand-as-experience,
+      driving innovation and engagement.
+    </p>
+
+    {/* Tabs */}
+    <div className="relative mt-10 md:mt-12">
+
+      {/* Left Decoration */}
+      <div className="hidden lg:flex absolute left-16 top-10">
+        <div className="w-10 h-10 bg-blue-600 rounded-l-full"></div>
+        <div className="w-5 h-5 bg-yellow-400 rounded-full self-center -ml-1"></div>
+      </div>
+
+      <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2 sm:gap-3">
+
+        {data.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => setActive(index)}
+            className={`
+              h-[46px]
+              sm:h-[52px]
+              md:h-[58px]
+              px-4
+              sm:px-5
+              md:px-7
+              rounded-full
+              border
+              flex
+              items-center
+              gap-2
+              md:gap-3
+              text-xs
+              sm:text-sm
+              md:text-[15px]
+              font-medium
+              transition-all
+              duration-300
+              ${
+                active === index
+                  ? "border-blue-600 text-slate-800 shadow-sm"
+                  : "border-gray-300 text-slate-700"
+              }
+            `}
+          >
+            <span className="text-base md:text-xl">
+              {
+                [
+                  "💻",
+                  "💡",
+                  "💡",
+                  "📖",
+                  "❓",
+                  "📊",
+                  "💎",
+                  "🎨",
+                  "⚛️",
+                ][index]
+              }
+            </span>
+
+            {item.title}
+          </button>
+        ))}
+      </div>
+
+      {/* Right Decoration */}
+      <div className="hidden lg:flex absolute right-16 top-20">
+        <div className="w-10 h-10 bg-blue-600 rounded-l-full"></div>
+        <div className="w-5 h-5 bg-yellow-400 rounded-full self-center -ml-1"></div>
+      </div>
+
+    </div>
+
+    {/* Content */}
+    {/* Content */}
+<div className="relative mt-8 md:mt-12">
+
+  <div className="flex flex-col lg:flex-row gap-4 lg:gap-5">
+
+    {/* Left Card */}
+    <div className="w-full lg:w-[38%] bg-[#f3edd8] rounded-[24px] md:rounded-[32px] p-6 md:p-8">
+
+      <h3 className="text-[28px] md:text-[42px] font-bold text-slate-800 leading-tight">
+        {activeData.title}
+      </h3>
+
+      <p className="mt-4 md:mt-6 text-gray-700 text-[16px] md:text-lg leading-relaxed">
+        {activeData.description}
       </p>
 
-      {/* Tabs */}
-     <div className="relative mt-12">
-
-  {/* Left Decoration */}
-  <div className="hidden lg:flex absolute left-25 bottom-38">
-    <div className="w-10 h-10 bg-blue-600 rounded-l-full"></div>
-    <div className="w-5 h-5 bg-yellow-400 rounded-full self-center -ml-1"></div>
-  </div>
-
-  {/* Tabs */}
-  <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-3">
-
-    {data.map((item, index) => (
-      <button
-        key={index}
-        onClick={() => setActive(index)}
-        className={`
-          h-[58px]
-          px-7
-          rounded-full
-          border
-          flex
-          items-center
-          gap-3
-          cursor-pointer
-          text-[15px]
-          font-medium
-          transition-all
-          duration-300
-          
-          ${
-            active === index
-              ? "border-blue-600 text-slate-800 shadow-sm"
-              : "border-gray-300 text-slate-700"
-          }
-        `}
-      >
-        <span className="text-xl">
-          {
-            ["💻","💡","💡","📖","❓","📊","💎","🎨","⚛️"][index]
-          }
-        </span>
-
-        {item.title}
+      <button className="mt-5 md:mt-8 bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm md:text-base">
+        Explore Now
       </button>
-    ))}
 
-  </div>
+      <div className="mt-6 md:mt-8 flex items-center gap-3 bg-white rounded-full px-4 py-3 w-fit shadow-md">
 
-  {/* Right Decoration */}
-  <div className="hidden lg:flex absolute right-22 top-20">
-    <div className="w-10 h-10 bg-blue-600 rounded-l-full"></div>
-    <div className="w-5 h-5 bg-yellow-400 rounded-full self-center -ml-1"></div>
+        <img
+          src={activeData.logo}
+          alt={activeData.company}
+          className="h-8 md:h-10 w-auto object-contain"
+        />
+
+        <div>
+          <h4 className="font-bold text-xl md:text-2xl">
+            {activeData.impressions}
+          </h4>
+
+          <p className="text-gray-500 text-xs md:text-sm">
+            Impressions
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* Right Card */}
+    <div className="relative w-full lg:w-[62%] rounded-[24px] md:rounded-[36px] overflow-hidden bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-400 min-h-[220px] sm:min-h-[300px] md:min-h-[420px]">
+
+      {/* White Circles */}
+      <div className="hidden lg:flex absolute left-[-18px] top-1/2 -translate-y-1/2 flex-col gap-3 z-20">
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="w-9 h-9 bg-white rounded-full"
+          />
+        ))}
+      </div>
+
+      {/* Glow */}
+      <div className="absolute top-8 left-8 md:top-16 md:left-20 w-32 md:w-56 h-32 md:h-56 bg-yellow-300/50 blur-[80px]" />
+
+      {/* Image */}
+      <div className="h-full flex items-center justify-center p-3 md:p-8">
+
+        <img
+          src={activeData.image}
+          alt={activeData.title}
+          className="w-full h-auto rounded-[20px] md:rounded-[28px] shadow-2xl border border-white/30"
+        />
+
+      </div>
+
+    </div>
+
   </div>
 
 </div>
 
-      {/* Main Content */}
-      <div className="relative mt-12">
-        <div className="flex flex-col lg:flex-row gap-4">
-
-          {/* Left Card */}
-          <div className="w-full lg:w-[38%] bg-[#f3edd8] rounded-[36px] p-10">
-            <h3 className="text-4xl font-bold text-slate-800">
-              {activeData.title}
-            </h3>
-
-            <p className="mt-6 text-gray-700 text-lg leading-relaxed">
-              {activeData.description}
-            </p>
-
-            <button className="mt-8 bg-blue-600 hover:bg-blue-700 transition cursor-pointer text-white px-8 py-4 rounded-full">
-              Explore Now
-            </button>
-
-            <div className="mt-10 flex items-center gap-4 bg-white rounded-full px-5 py-3 w-fit shadow-md">
-              <img
-                src={activeData.logo}
-                alt={activeData.company}
-                className="h-10 w-auto object-contain"
-              />
-
-              <div>
-                <h4 className="font-bold text-2xl">
-                  {activeData.impressions}
-                </h4>
-
-                <p className="text-gray-500 text-sm">
-                  Impressions
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Card */}
-          <div className="relative w-full lg:w-[62%] rounded-[36px] overflow-hidden bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-400 min-h-[500px]">
-
-            {/* White Circles */}
-            <div className="hidden lg:flex absolute left-[-18px] top-1/2 -translate-y-1/2 flex-col gap-3 z-20">
-              {[...Array(8)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-9 h-9 bg-white rounded-full"
-                />
-              ))}
-            </div>
-
-            {/* Glow */}
-            <div className="absolute top-16 left-20 w-56 h-56 bg-yellow-300/50 blur-[100px]" />
-
-            {/* Image */}
-            <div className="h-full flex items-center justify-center p-10">
-              <img
-                src={activeData.image}
-                alt={activeData.title}
-                className="w-full max-w-[720px] rounded-3xl shadow-2xl border border-white/30"
-              />
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
+  </section>
+);
 }
 
 export default EngagementSection;
